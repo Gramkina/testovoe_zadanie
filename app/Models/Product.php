@@ -51,7 +51,7 @@ class Product extends Model
 
 
     /**
-     * Add product in table
+     * Add product in database
      *
      * @param $article string
      * @param $name string
@@ -65,6 +65,17 @@ class Product extends Model
         $this->STATUS = $status;
         $this->DATA = $data;
         $this->save();
+    }
+
+    /**
+     * Get available products
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeAvailableProducts($query)
+    {
+        return $query->where('STATUS', 'like', 'available')->get();
     }
 
 }
