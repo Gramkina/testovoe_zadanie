@@ -1,0 +1,37 @@
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product-table{
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #505050;
+    border-collapse: collapse;
+    border: 0;
+}
+.product-table tr td{
+    padding: 25px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+.table-title{
+    font-weight: bold;
+    font-size: 15px;
+}
+.content-table{
+    background: #ffffff;
+}
+td p{
+    margin: 0;
+}
+.button-add, .button-add-panel{
+    background: #3ac0ff;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px 70px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 25px;
+    display: inline-block;
+}

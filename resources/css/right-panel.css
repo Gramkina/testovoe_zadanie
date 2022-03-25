@@ -1,0 +1,56 @@
+.right-panel{
+    position: absolute;
+    background: #343e4f;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    width: 40%;
+    right: 0;
+}
+.right-panel-title{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+.panel-name{
+    margin: 0;
+}
+.right-panel-title img{
+    width: 3%;
+    height: 3%;
+    cursor: pointer;
+}
+.input-name{
+    margin: 15px 0 5px 0;
+    color: white;
+    font-size: 10px;
+}
+.right-panel input{
+    width: 80%;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: #383838;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.attr-title{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.add-attr-btn{
+    color: #67c2f6;
+    border-bottom: 1px dashed #67c2f6;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+.button-add-panel{
+    margin: 35px 0 0 0;
+}
