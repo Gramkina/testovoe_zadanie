@@ -1,7 +1,7 @@
 <div class="right-panel">
     <div class="right-panel-title">
         <p class="panel-name">Добавить продукт</p>
-        <img src="{{asset('img/icon/close-button.svg')}}" alt="close-button">
+        <img id="close-button" src="{{asset('img/icon/close-button.svg')}}" alt="close-button">
     </div>
     <p class="input-name">Артикул</p>
     <input>

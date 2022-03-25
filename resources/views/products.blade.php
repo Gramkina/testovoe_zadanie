@@ -3,6 +3,7 @@
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{asset('js/app.js')}}"></script>
 @endpush
 
 @section('body')
@@ -27,9 +28,7 @@
                     </td>
                 </tr>
             </table>
-            <div class="button-add">
-                Добавить
-            </div>
+            <div class="button-add">Добавить</div>
             @include('template.right-panel')
         </div>
     </div>

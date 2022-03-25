@@ -79,7 +79,7 @@ body{
 .product-table tr td{
     padding: 25px;
     box-sizing: border-box;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #383838;
 }
 .table-title{
     font-weight: bold;
@@ -109,6 +109,7 @@ td p{
     padding: 20px;
     width: 40%;
     right: 0;
+    visibility: hidden;
 }
 .right-panel-title{
     display: flex;

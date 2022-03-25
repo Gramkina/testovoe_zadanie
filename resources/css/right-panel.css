@@ -5,6 +5,7 @@
     padding: 20px;
     width: 40%;
     right: 0;
+    visibility: hidden;
 }
 .right-panel-title{
     display: flex;
