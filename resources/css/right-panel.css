@@ -1,4 +1,4 @@
-.right-panel{
+.right-panel, .right-panel-show, .right-panel-update{
     position: absolute;
     background: #343e4f;
     font-family: 'Roboto', sans-serif;
@@ -69,4 +69,32 @@
     width: 80%;
     height: 80%;
     cursor: pointer;
+}
+.right-panel-show-name, .right-panel-show-value{
+    font-size: 14px;
+    color: #b6b6b6;
+    margin-bottom: 15px;
+}
+.right-panel-show-value{
+    color: white;
+}
+.table-product-show{
+    border-spacing: 0 30px;
+}
+.tr-attr-value{
+    padding-left: 20px;
+}
+.tool-panel{
+    display: flex;
+    justify-content: flex-end;
+}
+.form-tool-panel{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.form-tool-panel img, .form-tool-panel input[type=image]{
+    margin-right: 5px;
+    width: 4%;
+    height: 100%;
 }

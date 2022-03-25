@@ -15,7 +15,6 @@ class ProductController extends Controller
      *
      * @var string[]
      */
-
     protected $rules = [
         'NAME' => 'required|min:10',
         'ARTICLE' => 'required|alpha_num',
@@ -42,57 +41,50 @@ class ProductController extends Controller
 
         $data = $request->all();
         $attributes = [];
-        for ($i = 0; $i < count($data['DATA-NAME']); $i++) {
-            $attributes[$data['DATA-NAME'][$i]] = $data['DATA-VALUE'][$i];
+        if (isset($data['DATA-NAME'])) {
+            for ($i = 0; $i < count($data['DATA-NAME']); $i++) {
+                $attributes[$data['DATA-NAME'][$i]] = $data['DATA-VALUE'][$i];
+            }
         }
         $product = new Product();
-        $product->addProduct($data['ARTICLE'], $data['NAME'], $data['STATUS'], $attributes);
+        $product->createProduct($data['ARTICLE'], $data['NAME'], $data['STATUS'], $attributes);
 
-        return redirect()->action([ProductController::class, 'index']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect()->route('product.index');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
-     * @return Response
+     * @param Product $product
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $validate = $request->validate($this->rules);
+
+        $data = $request->all();
+        $attributes = [];
+        if (isset($data['DATA-NAME'])) {
+            for ($i = 0; $i < count($data['DATA-NAME']); $i++) {
+                $attributes[$data['DATA-NAME'][$i]] = $data['DATA-VALUE'][$i];
+            }
+        }
+        $product->updateProduct($data['ARTICLE'], $data['NAME'], $data['STATUS'], $attributes);
+
+        return redirect()->route('product.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Product $product
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.index');
     }
+
 }

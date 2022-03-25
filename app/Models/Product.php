@@ -49,6 +49,15 @@ class Product extends Model
         'DATA' => 'array',
     ];
 
+    /**
+     * Get product by article
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'ARTICLE';
+    }
 
     /**
      * Add product in database
@@ -58,13 +67,22 @@ class Product extends Model
      * @param $status string
      * @param $data array
      */
-    public function addProduct($article, $name, $status, $data)
+    public function createProduct($article, $name, $status, $data)
     {
         $this->ARTICLE = $article;
         $this->NAME = $name;
         $this->STATUS = $status;
         $this->DATA = $data;
         $this->save();
+    }
+
+    public function updateProduct($article, $name, $status, $data)
+    {
+        $this->ARTICLE = $article;
+        $this->NAME = $name;
+        $this->STATUS = $status;
+        $this->DATA = $data;
+        $this->update();
     }
 
     /**
