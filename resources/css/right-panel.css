@@ -29,8 +29,7 @@
     color: white;
     font-size: 10px;
 }
-.right-panel input{
-    width: 80%;
+.big-input, .small-input{
     height: 35px;
     border: none;
     border-radius: 6px;
@@ -39,6 +38,13 @@
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 14px;
+    background: white;
+}
+.big-input{
+    width: 80%;
+}
+.small-input{
+    width: 99%;
 }
 .attr-title{
     color: white;
@@ -54,4 +60,13 @@
 }
 .button-add-panel{
     margin: 35px 0 0 0;
+    border: none;
+}
+.attribute{
+    width: 80%;
+}
+.trash-btn{
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
 }

@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('products');
-});
+Route::resource('/', \App\Http\Controllers\ProductController::class);

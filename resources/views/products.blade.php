@@ -18,15 +18,20 @@
                     <td>СТАТУС</td>
                     <td>АТРИБУТЫ</td>
                 </tr>
-                <tr class="content-table">
-                    <td>mtokb2</td>
-                    <td>fasdfsafsdfsdafsdf</td>
-                    <td>Доступен</td>
-                    <td>
-                        <p>Цвет: черный</p>
-                        <p>аываф: fsdfsdfsf</p>
-                    </td>
-                </tr>
+                @foreach($products as $product)
+                    <tr class="content-table">
+                        <td>{{$product['ARTICLE']}}</td>
+                        <td>{{$product['NAME']}}</td>
+                        <td>{{$product['STATUS']}}</td>
+                        <td>
+                            @isset($product['DATA'])
+                                @foreach($product['DATA'] as $name => $value)
+                                    <p>{{ $name }}: {{ $value }}</p>
+                                @endforeach
+                            @endisset
+                        </td>
+                    </tr>
+                @endforeach
             </table>
             <div class="button-add">Добавить</div>
             @include('template.right-panel')
