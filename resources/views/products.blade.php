@@ -3,7 +3,11 @@
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{asset('js/app.js')}}"></script>
+    @auth
+        @if(\Illuminate\Support\Facades\Auth::user()->role == config('products.role'))
+            <script src="{{asset('js/app.js')}}"></script>
+        @endif
+    @endauth
 @endpush
 
 @section ('body')
@@ -47,7 +51,12 @@
                     </tr>
                 @endforeach
             </table>
-            <div class="button-add">Добавить</div>
+
+            @auth
+                @if(\Illuminate\Support\Facades\Auth::user()->role == config('products.role'))
+                    <div class="button-add">Добавить</div>
+                @endif
+            @endauth
 
             @include ('template.right-panel-store')
             @include ('template.right-panel-show')

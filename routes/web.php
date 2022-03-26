@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,14 @@ Route::get('/', function () {
     return redirect()->route('product.index');
 });
 
-Route::resource('/product', \App\Http\Controllers\ProductController::class)->only([
-    'index', 'store', 'update', 'destroy'
+Route::get('/login{id}', [UserController::class, 'login'])->middleware('guest')->name('login');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::group(['middleware' => ['auth', 'role']], function () {
+    Route::resource('/product', ProductController::class)->only([
+        'store', 'update', 'destroy',
+    ]);
+});
+Route::resource('/product', ProductController::class)->only([
+    'index',
 ]);

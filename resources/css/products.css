@@ -2,6 +2,10 @@ body{
     margin: 0;
     display: flex;
 }
+a{
+    text-decoration: unset;
+    color: #505050;
+}
 .left-menu{
     background: #343e4f;
     width: 15%;
