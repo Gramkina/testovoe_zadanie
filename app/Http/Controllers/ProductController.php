@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Notifications\CreateProductNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Notification;
 
 class ProductController extends Controller
 {
@@ -48,6 +50,8 @@ class ProductController extends Controller
         }
         $product = new Product();
         $product->createProduct($data['ARTICLE'], $data['NAME'], $data['STATUS'], $attributes);
+
+        Notification::route('mail', config('products.email'))->notify(new CreateProductNotification());
 
         return redirect()->route('product.index');
     }
